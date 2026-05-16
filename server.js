@@ -1,71 +1,116 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
-const cors = require("cors");
 const fs = require("fs");
+const path = require("path");
 
 const app = express();
 
-app.use(cors());
 app.use(express.json());
+app.use(express.static("public"));
 
 const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD
+
+  service:"gmail",
+
+  auth:{
+
+    user:process.env.GMAIL_USER,
+
+    pass:process.env.GMAIL_PASS
+
   }
+
 });
 
-app.post("/send-email", async (req, res) => {
+app.post("/send",async(req,res)=>{
 
-  try {
+  try{
 
     const {
+
       to,
       subject,
-      type,
-      data
+      title,
+      message,
+      buttonText,
+      buttonLink
+
     } = req.body;
 
-    const templatePath = `./templates/${type}.html`;
+    let html =
+      fs.readFileSync(
 
-    let html = fs.readFileSync(templatePath, "utf8");
+        path.join(
+          __dirname,
+          "templates",
+          "acces_client.html"
+        ),
 
-    Object.keys(data).forEach((key) => {
-      html = html.replaceAll(
-        `{{${key}}}`,
-        data[key]
+        "utf8"
+
       );
-    });
+
+    html =
+      html.replace(
+        "{{TITLE}}",
+        title
+      );
+
+    html =
+      html.replace(
+        "{{MESSAGE}}",
+        message
+      );
+
+    html =
+      html.replace(
+        "{{BUTTON_TEXT}}",
+        buttonText
+      );
+
+    html =
+      html.replace(
+        "{{BUTTON_LINK}}",
+        buttonLink
+      );
 
     await transporter.sendMail({
-      from: process.env.EMAIL,
+
+      from:
+        `"PNT Fly Dijon" <${process.env.GMAIL_USER}>`,
+
       to,
+
       subject,
+
       html
+
     });
 
-    res.status(200).json({
-      success: true
+    res.json({
+
+      success:true
+
     });
 
-  } catch (error) {
+  }catch(err){
 
-    console.log(error);
+    console.log(err);
 
     res.status(500).json({
-      success: false,
-      error: error.message
+
+      error:err.message
+
     });
+
   }
+
 });
 
-app.get("/", (req, res) => {
-  res.send("PNT MAIL SERVER ONLINE");
-});
+app.listen(10000,()=>{
 
-const PORT = process.env.PORT || 3000;
+  console.log(
+    "MAIL SERVER RUNNING"
+  );
 
-app.listen(PORT, () => {
-  console.log(`Running on ${PORT}`);
 });

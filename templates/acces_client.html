@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<title>PNT Fly Dijon</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+
+  background:
+    linear-gradient(
+      180deg,
+      #07111F 0%,
+      #0B1220 100%
+    );
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  padding:40px;
+
+  color:white;
+}
+
+.container{
+
+  max-width:720px;
+
+  margin:auto;
+
+  background:
+    rgba(15,23,42,0.92);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-radius:30px;
+
+  overflow:hidden;
+
+  box-shadow:
+    0 0 60px rgba(56,189,248,0.12);
+}
+
+.header{
+
+  padding:50px;
+
+  text-align:center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4F46E5,
+      #06B6D4
+    );
+}
+
+.logo{
+
+  font-size:42px;
+
+  font-weight:800;
+
+  margin-bottom:10px;
+}
+
+.subtitle{
+
+  color:
+    rgba(255,255,255,0.85);
+
+  font-size:16px;
+}
+
+.content{
+
+  padding:50px;
+}
+
+.title{
+
+  font-size:32px;
+
+  font-weight:700;
+
+  margin-bottom:25px;
+}
+
+.message{
+
+  color:#CBD5E1;
+
+  line-height:1.9;
+
+  font-size:17px;
+
+  margin-bottom:35px;
+}
+
+.button{
+
+  display:inline-block;
+
+  padding:18px 28px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4F46E5,
+      #06B6D4
+    );
+
+  color:white;
+
+  text-decoration:none;
+
+  border-radius:16px;
+
+  font-weight:700;
+
+  font-size:16px;
+}
+
+.footer{
+
+  margin-top:40px;
+
+  padding-top:25px;
+
+  border-top:
+    1px solid rgba(255,255,255,0.08);
+
+  color:#64748B;
+
+  font-size:14px;
+
+  line-height:1.8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+
+    <div class="logo">
+      PNT Fly Dijon
+    </div>
+
+    <div class="subtitle">
+
+      Distribution professionnelle
+
+    </div>
+
+  </div>
+
+  <div class="content">
+
+    <div class="title">
+      {{TITLE}}
+    </div>
+
+    <div class="message">
+      {{MESSAGE}}
+    </div>
+
+    <a
+      href="{{BUTTON_LINK}}"
+      class="button"
+    >
+
+      {{BUTTON_TEXT}}
+
+    </a>
+
+    <div class="footer">
+
+      PNT Fly Dijon<br>
+      Paul • Nelio • Tom
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+
+</html>
