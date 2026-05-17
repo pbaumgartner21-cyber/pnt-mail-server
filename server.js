@@ -1,14 +1,23 @@
+require("dotenv").config();
+
 const express = require("express");
 const nodemailer = require("nodemailer");
 const fs = require("fs");
 const path = require("path");
+const cors = require("cors");
 
 const app = express();
 
-app.use(express.json());
+app.use(cors());
+
+app.use(express.json({
+  limit:"10mb"
+}));
+
 app.use(express.static("public"));
 
-const transporter = nodemailer.createTransport({
+const transporter =
+nodemailer.createTransport({
 
   service:"gmail",
 
@@ -19,6 +28,12 @@ const transporter = nodemailer.createTransport({
     pass:process.env.GMAIL_PASS
 
   }
+
+});
+
+app.get("/",(req,res)=>{
+
+  res.send("PNT MAIL SERVER ONLINE");
 
 });
 
