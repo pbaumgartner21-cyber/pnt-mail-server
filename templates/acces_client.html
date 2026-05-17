@@ -1,26 +1,285 @@
-<div class="footer-logo">
-  PNT <span>FLY</span> DIJON
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0"
+/>
+
+<title>PNT Fly Dijon</title>
+
+<style>
+
+body{
+  margin:0;
+  padding:0;
+  background:#050816;
+  font-family:Arial,sans-serif;
+  color:white;
+}
+
+.wrapper{
+  width:100%;
+  padding:40px 20px;
+}
+
+.container{
+
+  max-width:700px;
+
+  margin:auto;
+
+  background:#0B1020;
+
+  border-radius:30px;
+
+  overflow:hidden;
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+}
+
+.hero{
+
+  padding:50px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(124,58,237,0.2),
+    rgba(236,72,153,0.2)
+  );
+}
+
+.badge{
+
+  display:inline-block;
+
+  padding:10px 18px;
+
+  border-radius:999px;
+
+  background:
+  rgba(255,255,255,0.08);
+
+  color:#E879F9;
+
+  font-size:13px;
+
+  margin-bottom:25px;
+}
+
+h1{
+
+  font-size:48px;
+
+  margin:0;
+
+  line-height:1.1;
+
+  background:
+  linear-gradient(
+    90deg,
+    #C084FC,
+    #F472B6
+  );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+}
+
+.message{
+
+  margin-top:25px;
+
+  color:#CBD5E1;
+
+  font-size:18px;
+
+  line-height:1.8;
+}
+
+.stats{
+
+  margin-top:35px;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:15px;
+}
+
+.card{
+
+  background:#111827;
+
+  padding:20px;
+
+  border-radius:18px;
+
+  border:
+  1px solid rgba(255,255,255,0.06);
+}
+
+.card-title{
+
+  color:white;
+
+  font-weight:bold;
+
+  margin-bottom:8px;
+}
+
+.card-text{
+
+  color:#94A3B8;
+
+  font-size:14px;
+}
+
+.button{
+
+  display:inline-block;
+
+  margin-top:35px;
+
+  background:
+  linear-gradient(
+    90deg,
+    #7C3AED,
+    #EC4899
+  );
+
+  color:white;
+
+  text-decoration:none;
+
+  padding:16px 28px;
+
+  border-radius:14px;
+
+  font-weight:bold;
+
+  font-size:16px;
+}
+
+.footer{
+
+  padding:35px;
+
+  border-top:
+  1px solid rgba(255,255,255,0.06);
+
+  text-align:center;
+
+  color:#64748B;
+
+  font-size:13px;
+}
+
+.logo{
+
+  font-size:24px;
+
+  font-weight:900;
+
+  margin-bottom:12px;
+}
+
+.logo span{
+
+  color:#E879F9;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="container">
+
+<div class="hero">
+
+<div class="badge">
+PNT FLY DIJON
 </div>
 
-<div class="footer-text">
-  Distribution professionnelle de flyers sur Dijon et sa métropole.<br>
-  Suivi GPS • Rapport PDF • Couverture complète
+<h1>
+{{TITLE}}
+</h1>
+
+<div class="message">
+{{MESSAGE}}
 </div>
 
-<div class="socials">
+<div class="stats">
 
-  <a href="#" class="social">
-    Site web
-  </a>
+<div class="card">
 
-  <a href="#" class="social">
-    Contact
-  </a>
+<div class="card-title">
+Distribution
+</div>
 
-  <a href="#" class="social">
-    Instagram
-  </a>
+<div class="card-text">
+Dijon & Métropole
+</div>
 
+</div>
+
+<div class="card">
+
+<div class="card-title">
+Suivi GPS
+</div>
+
+<div class="card-text">
+Trajets enregistrés
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-title">
+Rapport PDF
+</div>
+
+<div class="card-text">
+Preuves détaillées
+</div>
+
+</div>
+
+</div>
+
+<a
+href="{{BUTTON_LINK}}"
+class="button"
+>
+{{BUTTON_TEXT}}
+</a>
+
+</div>
+
+<div class="footer">
+
+<div class="logo">
+PNT <span>FLY</span> DIJON
+</div>
+
+<div>
+Distribution professionnelle de flyers<br>
+Dijon • Talant • Fontaine • Chenôve
 </div>
 
 </div>
